@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
-  {id: '1', firstName: 'Lady', lastName: 'Ladyperson'},
-  {id: '2', firstName: 'Man', lastName: 'Manly'},
-  {id: '3', firstName: 'Fluid', lastName: 'McFluid'},
+{ managingUserID: '1', profilePic: 'profile profile', coverPic: 'hello cover', gallery:'gallery array', rememberedCommunity: 'list of users'
+},
+{ managingUserID: '2', profilePic: 'profile profile!', coverPic: 'hello cover!', gallery:'gallery array', rememberedCommunity: 'list of users'
+}
 ]
 
 const profilesSlice = createSlice({
