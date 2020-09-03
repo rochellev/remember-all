@@ -10,13 +10,14 @@ export const ProfileView = ({ id }) => {
 
   return (
     <View style={styles.profileContainer}>
-      <View style={styles.imageContainer}>
-        <Text>{profile.coverPic.toString()}</Text>
-
+      <View style={styles.coverImageContainer}>
         <Image
-          style={{ height: "100%", width: "100%" }}
+          style={styles.fitImage}
           source={profile.coverPic}
         />
+      </View>
+      <View style={styles.profileImageContainer}>
+        <Image  style={[{borderRadius: 75}, styles.fitImage ]}source={profile.profilePic}/>
       </View>
       <Text style={{ padding: 15 }}>{profile.rememberedName}</Text>
     </View>
@@ -30,10 +31,17 @@ const styles = StyleSheet.create({
     backgroundColor: "#c6c6d2",
     width: "100%"
   },
-  imageContainer: {
+  coverImageContainer: {
     alignSelf: "center",
     width: 390,
     height: 250,
     padding: 10
+  },
+  fitImage: { height: "100%", width: "100%" },
+  profileImageContainer:{
+    alignSelf: "center",
+    width: 130,
+    height: 130,
+    
   }
 });
