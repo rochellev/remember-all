@@ -7,18 +7,29 @@ import { selectProfileById } from "./profilesSlice";
 
 export const ProfileView = ({ id }) => {
   const profile = useSelector(state => selectProfileById(state, id));
+  const CoverImage = () => {
+    return (
+      <View style={styles.coverImageContainer}>
+        <Image style={styles.fitImage} source={profile.coverPic} />
+      </View>
+    );
+  };
+
+  const ProfileImage = () => {
+    return (
+      <View style={styles.profileImageContainer}>
+        <Image
+          style={[{ borderRadius: 75 }, styles.fitImage]}
+          source={profile.profilePic}
+        />
+      </View>
+    );
+  };
 
   return (
     <View style={styles.profileContainer}>
-      <View style={styles.coverImageContainer}>
-        <Image
-          style={styles.fitImage}
-          source={profile.coverPic}
-        />
-      </View>
-      <View style={styles.profileImageContainer}>
-        <Image  style={[{borderRadius: 75}, styles.fitImage ]}source={profile.profilePic}/>
-      </View>
+      <CoverImage />
+      <ProfileImage />
       <Text style={{ padding: 15 }}>{profile.rememberedName}</Text>
     </View>
   );
@@ -38,10 +49,10 @@ const styles = StyleSheet.create({
     padding: 10
   },
   fitImage: { height: "100%", width: "100%" },
-  profileImageContainer:{
+  profileImageContainer: {
     alignSelf: "center",
     width: 130,
     height: 130,
-    
+    position: "absolute"
   }
 });
