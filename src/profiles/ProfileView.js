@@ -4,33 +4,33 @@ import { View, Text, Image, StyleSheet } from "react-native";
 import { selectProfileById } from "./profilesSlice";
 
 // <Image style={{height: "100%", width: "100%"}}source={require("../../assets/pippa-suave.jpg")}/>
+const CoverImage = ({ image }) => {
+  return (
+    <View style={styles.coverImageContainer}>
+      <Image style={styles.fitImage} source={image} />
+    </View>
+  );
+};
+
+const ProfileImage = ({ image }) => {
+  return (
+    <View style={[styles.profileImageContainer, styles.shadows]}>
+      <Image style={[{ borderRadius: 75 }, styles.fitImage]} source={image} />
+    </View>
+  );
+};
 
 export const ProfileView = ({ id }) => {
   const profile = useSelector(state => selectProfileById(state, id));
-  const CoverImage = () => {
-    return (
-      <View style={styles.coverImageContainer}>
-        <Image style={styles.fitImage} source={profile.coverPic} />
-      </View>
-    );
-  };
-
-  const ProfileImage = () => {
-    return (
-      <View style={[styles.profileImageContainer, styles.shadows]}>
-        <Image
-          style={[{ borderRadius: 75 }, styles.fitImage]}
-          source={profile.profilePic}
-        />
-      </View>
-    );
-  };
-
   return (
     <View style={styles.profileContainer}>
-      {CoverImage()}
-      {ProfileImage()}
+      <CoverImage image={profile.coverPic} />
+      <ProfileImage image={profile.profilePic} />
       <Text style={{ padding: 15 }}>{profile.rememberedName}</Text>
+      <View>
+        <Text>Gallery goes here</Text>
+      </View>
+      
     </View>
   );
 };
@@ -55,7 +55,11 @@ const styles = StyleSheet.create({
     height: 130,
     position: "absolute",
     left: 150,
-    top: 200
+    top: 190,
+    borderColor: "rgba(86, 97, 112, .12)",
+    borderWidth: 2,
+
+    borderRadius: 75
   },
   shadows: {
     shadowColor: "#000",
@@ -63,7 +67,7 @@ const styles = StyleSheet.create({
       width: 0,
       height: 7
     },
-    shadowOpacity: 0.25,
+    shadowOpacity: 0.35,
     shadowRadius: 12.84,
 
     elevation: 15
