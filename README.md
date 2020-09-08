@@ -1,36 +1,25 @@
-# My Universal React Project
+# Remember All
+### Rochelle Crain and Megan Jensen
 
-<p>
-  <!-- iOS -->
-  <a href="https://itunes.apple.com/app/apple-store/id982107779">
-    <img alt="Supports Expo iOS" longdesc="Supports Expo iOS" src="https://img.shields.io/badge/iOS-4630EB.svg?style=flat-square&logo=APPLE&labelColor=999999&logoColor=fff" />
-  </a>
-  <!-- Android -->
-  <a href="https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample">
-    <img alt="Supports Expo Android" longdesc="Supports Expo Android" src="https://img.shields.io/badge/Android-4630EB.svg?style=flat-square&logo=ANDROID&labelColor=A4C639&logoColor=fff" />
-  </a>
-  <!-- Web -->
-  <a href="https://docs.expo.io/workflow/web/">
-    <img alt="Supports Expo Web" longdesc="Supports Expo Web" src="https://img.shields.io/badge/web-4630EB.svg?style=flat-square&logo=GOOGLE-CHROME&labelColor=4285F4&logoColor=fff" />
-  </a>
-</p>
+## Description
+
 
 ## 🚀 How to use
-
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` to start the bundler.
-- Open the project in a React runtime to try it:
+- First, download the Expo Client App 
   - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
   - Web: Any web browser
 
-## Adding Native Code
+- If you have an Android phone, you can scan the QR code or visit the [expo hosted page](https://expo.io/@rochellev/remember-all). Unfortunately, this code won't work with iPhone. The work around for this is to run the app locally.
+![QR Code](./assets/remember-all-QR.jpg)
 
-This project can be run from a web browser or the Expo client app. You may find that you want to add more native code later on. You can do this by ejecting the project and rebuilding it yourself.
-
-- Run `yarn eject` to create the native projects.
-- You can still run your project in the web browser or Expo client, you just won't be able to access any new native modules you add.
+- To run app locally follow the steps below then scan the project's QR code using the Expo Client App
+```sh
+$ git clone https://github.com/rochellev/remember-all.git
+$ cd  ./remember-all
+$ yarn install
+$ yarn start
+```
 
 ## Publishing
 
