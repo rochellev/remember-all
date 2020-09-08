@@ -10,7 +10,7 @@
   - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
   - Web: Any web browser
 
-- If you have an Android phone, you can scan the QR code or visit the [expo hosted page](https://expo.io/@rochellev/remember-all). Unfortunately, this code won't work with iPhone. The work around for this is to run the app locally.
+- If you have an Android phone, you can scan the QR code or visit the [expo hosted page](https://expo.io/@rochellev/remember-all). Unfortunately, this code won't work with iPhone. The work around for this is to run the app locally. <br>
 ![QR Code](./assets/remember-all-QR.jpg)
 
 - To run app locally follow the steps below then scan the project's QR code using the Expo Client App
