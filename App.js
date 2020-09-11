@@ -3,23 +3,31 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { Provider } from "react-redux";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
+import { SafeAreaView, StyleSheet, Text, View, Button } from "react-native";
 import { ProfileView } from "./src/profiles/ProfileView";
 import Constants from "expo-constants";
 import { getStore } from "./store";
 
-function HomeScreen() {
+function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate("Details", {
+          itemId: 86,
+            otherParam: 'This is param sent from Home to the Details route',
+        })}
+      />
     </View>
   );
 }
 
-function DetailsScreen() {
+function DetailsScreen({ route, navigation }) {
   return (
     <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
       <Text>Details Screen</Text>
+      <Button title="Go Home" onPress={() => navigation.navigate("Home")} />
     </View>
   );
 }
