@@ -14,10 +14,12 @@ function HomeScreen({ navigation }) {
       <Text>Home Screen</Text>
       <Button
         title="Go to Details"
-        onPress={() => navigation.navigate("Details", {
-          itemId: 86,
-            otherParam: 'This is param sent from Home to the Details route',
-        })}
+        onPress={() =>
+          navigation.navigate("Details", {
+            itemId: 86,
+            otherParam: "This is param sent from Home to the Details route"
+          })
+        }
       />
     </View>
   );
@@ -36,14 +38,14 @@ const Stack = createStackNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Provider store={getStore()}>
+    <Provider store={getStore()}>
+      <NavigationContainer>
         <Stack.Navigator initialRouteName="Home">
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Details" component={DetailsScreen} />
         </Stack.Navigator>
-      </Provider>
-    </NavigationContainer>
+      </NavigationContainer>
+    </Provider>
   );
 }
 
